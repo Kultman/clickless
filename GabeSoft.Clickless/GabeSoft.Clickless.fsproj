@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{404e4f31-e387-4a96-be49-6d91d9b1577c}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GabeSoft.Clickless</RootNamespace>
+    <AssemblyName>Clickless</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <Name>GabeSoft.Clickless</Name>
+    <SccProjectName>"$/Learning2", BUBAAAAA</SccProjectName>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+    <SccAuxPath />
+    <SccLocalPath>..</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\Debug\GabeSoft.Clickless.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\Release\GabeSoft.Clickless.XML</DocumentationFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx" />
+    <Content Include="Mouse.ico" />
+    <Compile Include="CursorForm.fs" />
+    <Compile Include="ActionForm.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Tester.fsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GabeSoft.Drawing\GabeSoft.Drawing.fsproj">
+      <Name>GabeSoft.Drawing</Name>
+      <Project>{b58d4ae6-8681-4e36-bfd9-4023fe3b7d50}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Gma.UserActivityMonitor\Gma.UserActivityMonitor.csproj">
+      <Name>Gma.UserActivityMonitor</Name>
+      <Project>{f52aa97e-180a-40ed-8f2b-09080171d6c7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <HintPath>C:\Program Files\Common Files\microsoft shared\Visual Basic Power Packs\1.1\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <ProjectReference Include="..\GabeSoft.Common\GabeSoft.Common.fsproj">
+      <Name>GabeSoft.Common</Name>
+      <Project>{4101eff5-876a-45df-9658-2349b8498c4f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	     Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>
